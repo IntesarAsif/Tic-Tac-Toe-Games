@@ -7,7 +7,7 @@ let msg = document.querySelector("#msg");
 let turnY = true; //playerX. playerY
 
 const winPatterns = [
-    // [0,1,2],
+    // [0,1,2],     //for 9 boxes
     // [0,3,6],
     // [0,4,8],
     // [1,4,7],
@@ -37,7 +37,6 @@ const resetGame = ()=>{
 
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
-        // console.log("Box was clicked");
         if (turnY) {        //playerO
             box.innerText = "O";
             turnY = false;
@@ -80,8 +79,8 @@ const checkWinner = ()=>{
         let pos4Value = boxes[pattern[3]].innerText;
         let pos5Value = boxes[pattern[4]].innerText;
 
-        if(pos1Value != "" && pos2Value !="" &&pos3Value !=""){
-            // if(pos1Value == pos2Value && pos2Value == pos3Value)
+        if(pos1Value != "" && pos2Value !="" && pos3Value !="" && pos4Value !="" && pos5Value !=""){
+            // if(pos1Value == pos2Value && pos2Value == pos3Value) ////for 9 boxes
             if(pos1Value == pos2Value && pos2Value == pos3Value && pos3Value == pos4Value && pos4Value == pos5Value){
                 console.log(`Winner!", \nwinner is ${pos1Value}`);
                 // let winnerMsg = `Winner!", \nwinner is ${pos1Value}`
